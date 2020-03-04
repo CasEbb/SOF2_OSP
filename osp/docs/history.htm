@@ -1,0 +1,809 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.orangesmoothie.org/html-news.shtml -->
+<HTML>
+  <HEAD>
+    <TITLE>html-top</TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <META content="MSHTML 6.00.2800.1106" name="GENERATOR">
+    <STYLE type="text/css">BODY { SCROLLBAR-FACE-COLOR: #e76b00; SCROLLBAR-HIGHLIGHT-COLOR: #000000; SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ec840b; SCROLLBAR-BASE-COLOR: #e76b00; scrollbar-3d-light-color: #000000; scrollbar-dark-shadow-color: #000000 }
+	</STYLE>
+  </HEAD>
+  <BODY text="#000000" vLink="#ffcc2e" aLink="#ffcc2e" link="#ffcc2e" bgColor="#ec840b" background="images/bg-news.jpg">
+    <CENTER><IMG height="350" src="images/blender.jpg" width="290" align="right"><IMG src="images/osp_small.gif" border="0">
+    </CENTER>
+    <HR width="100%" color="#000000" noShade SIZE="1">
+    <FONT face="Arial,Helvetica" size="2">
+      <H3>
+        OSP for Soldier of Fortune 2 : Double Helix
+        <BR>
+        <a href="root.htm">Official documentation</a>
+      </H3>
+      <OL>
+        <h4>History</h4>
+        <table width="700">
+          <tr>
+            <td>
+              <pre><FONT face=Arial,Helvetica size=2>
+
+v1.1 
+============================================================================================================
+
+- security:
+  remapShader Remote Exploit             	  (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2236)
+  CS_ITEMS Remote Stack Overflow Exploit (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3401)
+  CG_ServerCommand Exploit 		 (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3400)
+- security: fix quite a few null pointer deferences
+- security: fix crash exploits
+
+- fix: sof2++ flash nade timers 
+- fix: sof2++ anm14 animation timers 
+- fix: sof2++ smoke greande issues 
+- fix: sof2++ OICW explosive damage 
+- fix: balanceteams behavior doesn't need to map restart
+- fix: disable_sof2pp_* and disable_pickup_* now honors all weapons 
+- fix: minor anticheat update
+- fix: UI crashes
+- fix: possible dissappearing models
+
+- chg: cheat protect fx_nearCull and cl_timenudge
+- chg: remove netcode changes from previous version
+- chg: drawfps now polls at 60fps, instead of every 4fps. this will average out to show smoother frame counts
+ 
+- add: osp_fixedhz <0|1> [default 1] serverside cvar. this will impliment 125hz fixed frequency to prevent framerate dependant physics for jumps, weapons etc
+- add: insert osp_fixedhz into /settings and serverinfo. this will show up in a game browser (all seeing eye etc) as being enabled/disabled
+- add: match_mutespecs <0|1> allow/prevents spectators from chatting during a match
+- add: match_latejoin <0|1> prevents/allows players from joining a match 
+- add: cvars to control messing spamming of clients. These default to "0" 
+	- g_msgs <n> Duration in seconds between messages sent to users 
+          Setting g_msgs to 10 will spam a message to all clients every 10 seconds
+	- g_msg<n> <string> where x is a number. Messages will be displayed from lowest to higher (0-9)
+	- g_msgprefix <string> where string is a prefix. ie: set g_msgprefix "^1OSP ^2TEST ^3SERVER:" 
+	- g_msgpos <n> position of messages
+          - <0> screen area
+          - <1> center screen 
+          - <2> console 
+
+v1.0L
+============================================================================================================
+- chg: remove new netcode for production use
+- fix: shaking viewangles
+- fix: netcode, hitboxes
+
+
+v1.0K
+============================================================================================================
+
+- fix: correct some prediction code problems with bogues extrapolations
+- fix: correct leaning hitboxes
+- fix: disable truePing by default
+- fix: respawnInterval/respawnInvulnerability/truePing show up in the server settings (all-seeing eye etc)
+
+v1.0J
+============================================================================================================
+
+- fix: cg_thirdperson wasn't displaying local entity with anticheat
+- fix: improve display of changes to important cvars (respawninterval/respawninvulnerability/sv_cheats/etc)
+- fix: lower the minimum for match requirements from 4 players to 2
+- fix: sof2++ anm14 lasts 8 seconds instead of 45
+- fix: crashes on filehandlers
+- fix: newline output fixes
+- fix: viewheight/POV was lower than expected, corrected back to default
+- fix: anticheat code
+- fix: cl_timenudge now works correctly
+- fix: map restarts automatically unpause a game
+- fix: fix timer bugs with pauses/unpauses
+- fix: killing spree in DM shows odd numbers
+- fix: improve antilag code slightly
+
+- chg: cg_drawfps behavior to get a more accurate FPS count
+- chg: remove smoothclients code to account for the new prediction code (it's all done serverside)
+
+- add: logging for oversized command exploits
+- add: add more output to /settings 
+- add: improve logging of other commands slightly
+- add: cvar to disable or enable displaying of killing sprees, defaults to 0
+       - g_killingspree <0|1>
+v1.0i
+===================================================================================
+- add: Improve anticheat
+- add: Fix server-side crash bugs
+- add: g_truePing <0|1> Will calculate scoreboard ping as the time between the current time and the 
+       client's last command time stamp. Useful for troubleshooting server bullet registry problems
+       and other issues.
+- fix: More accurate bullet tracing
+- fix: antilag code now stores more frames to help high pingers 
+- fix: some text messages weren't displaying correctly
+- fix: some text messages were corrected
+- chg: uncheat protect pmove_*
+- chg: g_awards is now disabled by default, can be enabled with g_awards 1
+- chg: improve performance of all entites on large servers
+
+v1.0h
+===================================================================================
+- add: Some more anticheat stuff.
+- fix: Server runs newer version message.
+
+v1.0g
+===================================================================================
+- add: osp_maxm203perteam default:2
+	Limit the amount of players that get m203 nades with their m4. Set to a high
+	value to disable
+- add: Shotgun lean fix. For sof2++ / Sof2 Vanilla. Credits to KRIS
+- add: Anti-Aimbot code. Will stop aimbots from locking onto players
+v1.0f
+===================================================================================
+- add: osp_realisticDamage &lt;0|1&gt; (voteable)
+       Truly real world damage, rules are:
+       - grenades do double damage
+       - bullets all do 95 damage when hitting arms,hands,feet,lower legs
+       - bullets do 100 damage when hitting tighs,waist,chest,neck,head
+       - bullets hitting the armor covered area of the body (chest,waist,tighs) 
+         take a random amount of armor away from 0 to 99 and the rest is taken from
+         health (M60 and MSG rifle are unnaffected by armor)
+       - knockback is 25% of the default knockback
+       Note: This is not meant as a replacement to the inconsistent sof2.wpn (usually
+       in a pk3 file named zrest.pk3 or something) real damage package thats already 
+       out there, this is a package for people who would like to play a faster paced game
+       where everybody has a fair chance at scoring some kills. If you use the osp 
+       realistic damage you can be 100% certain that no other modifications are being 
+       used, like for instance making one weapon (the server admin's favorite?) deal 
+       some extra damage...
+- add: new toggleable command +stats (like +scores for scores) will show hit location 
+       percentiles of where you hit the most, and where you've been hit the most
+       Note: the hit location percentiles are also shown during the award ceremony       
+- add: osp_enemyKillReport &lt;0|1&gt; (default: enabled, always disabled in g_doWarmup 2)
+       will tell you the remaining health/armor of the player who just killed you
+       (for public servers)
+- add: bots are now enabled, you can do /addbot mullins, I haven't touched the bot code
+       at all so they're a little dumb in complex team gametypes, but they're ok in 
+       deathmatch       
+- add: balanceteams command/vote added, can be called from rcon or by a regular vote
+       will balance teams by using players' kill/death ratio as the sorting value
+
+- chg: removed default filter behavior on target_speakers that was removing all 
+       target_speakers when using altmaps that replace sounds
+- chg: moved most of the weapons data for sof2++ in the data/sof2++.wpn file so it can
+       be modified
+- chg: increased reach multiplier from 1.25 to 1.35 so melee hits are easier to do for
+       osp_modversion 1 and 2
+- chg: replaced most sprees award with best score   
+- chg: callvote weapononly <weapon_num> (introduced in 1.0e, forgot to mention it!)
+       play a round with only the selected weapon, type callvote weapononly ? to see what
+       the weapon numbers are
+- chg: updated docs about match_fastrestart cvar
+- chg: sof2++ bumped up oicw damage from 35 to 40
+- chg: bumped up silenced socom's innacuracy
+- chg: sof2++ now gives 3 flashes
+- chg: sof2++ anm14 lasts 45 seconds instead of 8
+- chg: sof2++ lowered see-through distance with IR goggles
+- chg: sof2++ lowered viewable distance with NV goggles
+
+- fix: awards not always showing a winner even tho a winner there was
+- fix: newbie award was including people who hadn't played enough
+- fix: crosseyed award was including people who hadn't fired enough shots
+- fix: backpack picked up when not needing it
+- fix: additionnal security to make OSP ui panel behave correctly
+- fix: sof2++ additionnal weapons hurting players in invulnerability time
+- fix: adm callvote executing the previous passed vote when it passes
+- fix: unsupported items in vanilla (i.e.: m67 grenade on mp_shop) from breaking
+       the default sof2 client from loading
+- fix: sprees not resetting when doing a team kill, and spree displaying in obituary when 
+       at 0 and team killing   
+              
+v1.0e
+===================================================================================
+- add: new individual scoring points in gametype vip
+       killing someone who's hurt your vip in the last 5 seconds gives 3 points
+       killing the vip gives 5 points
+       vip killing enemy players gets 3 points
+- chg: removed broken RD filters in the ingame browser, i recommend using All Seeing Eye!
+- chg: sof2++ reduced see-through walls distance of thermals by 33% (from 600 to 400)
+- fix: backpacks giving flash/fire/smoke nades in vanilla and osp++
+- fix: fixed possible client exploit with goggles
+- note: disabling weapons in sof2++ requires setting cvars that have sof2pp between disable
+       and pickup, like so disable_sof2pp_pickup_weapon_***
+       
+       
+v1.0d
+===================================================================================
+
+- add: consolidated osp/osp++/sof2++ versions, they can be switched to with osp_modversion CVAR
+       osp_modversion 0 -&gt; vanilla sof2
+       osp_modversion 1 -&gt; osp++
+       osp_modversion 2 -&gt; sof2++
+- add: osp_weaponsFile cvar which specifies the weapons file parsed, this will allow
+       server admins that run weapons modification to quickly switch between files with
+       just a quick map_restart
+       i.e.: set osp_weaponsFile "ext_data/my_L33T_RealDamage_file.wpn" and then switch
+       to regular damage mode by just typing /reset osp_weaponsFile
+       Note: this will only work in regular OSP and OSP++ (not sof2++)
+- add: killing spree system ... :D (a killing spree is 5 consecutive kills without dying)
+- add: admin jail command (adm jail <id> <time>) where you can put someone in "jail" for a 
+       determined amount of time or the default time (osp_defaultJailTime)
+- add: vip gametype where each team respawns like in CTF and where the objective is to kill the
+       other team's VIP, optionnaly VIPs can be female models (osp_femaleVIP)
+- add: bad awards system (can be disabled by setting g_awards 2)
+       Quitter award - most suicides
+       Lemon award - most teamkills
+       Newbie award - worst ratio
+       Easy Target award - most deaths
+       Crosseyed award - worst accuracy
+       Spammer award - most shots fired
+       Chatty b*tch - most chat messages
+- add: new cvar osp_friendlyFireMultiplier, so you can reduce friendly fire 
+       without removing it completely.
+- add: new referee command cointoss throws a coin and tells result to everyone (to determine who
+       starts first in matches for example)
+- add: you can now load comp and pub configs through rcon (rcon comp &amp; rcon pub)
+- add: vip comp and pub configs
+- add: new weaptoggle accessory for selecting 
+
+- chg: new named configs usage /callvote comp CAL while playing CTF would try to load
+       the file osp_ctf_comp.CAL.cfg, old style default configs still work when no name
+       is specified
+- chg: skill removed from awards, replaced with number of killing sprees
+- chg: cheat protected pmove_fixed and pmove_msec       
+- chg: added sound entity (target_speaker) to the altmap system, so you can now add sounds to
+       your customized alt maps       
+- chg: osp++ shotgun recovery time lowered to 500 from 800
+- chg: osp++ shotgun inaccuracy lowered from 0.025 to 0.001
+- chg: osp++ shotguns MUCHO better
+- chg: osp++ usas inaccuracy lowered from 0.025 to 0.005
+- chg: sof2++ slowed down the acceleration of the RPG
+- chg: sof2++ oicw now has 4 explosive bullets that do 85 dmg on a 135 radius
+- chg: sof2++ walking m60 inaccuracy upped to 0.5
+- chg: sof2++ m60 running/leaning/jumping inaccuracy upped to 0.65
+- chg: sof2++ mm1 now viable in MP, shoots bouncy timed grenades, clip size 3 with 1 extra clips
+- chg: sof2++ rpg now viable in MP, shoots accelerating rocket, clip size 1 with no extra clips 
+	(cannot fire while moving or leaning)
+- chg: sof2++ new disable_sof2pp_* cvars for disabling weapons in sof2++
+- chg: sof2++ changed IR and NV goggles to make them more useful
+       - IR now sees further through walls, but is darker and sees less the environment
+       - NV now highlights players like IR and at a greater distance
+       
+- fix: gametype voting bug 
+- fix: smoke nade hurting players in osp++
+- fix: friend token with client 0 printing "none" instead of client 0's name
+- fix: enhanced award system font/text to be easier to look at
+- fix: sof2++ changed weapon values on client so new weapons predict correctly
+- fix: admin panel disabled when following someone not admin, same with ref and team
+- fix: updated docs
+
+             
+              
+v0.3g
+====================================================================================
+*** ENHANCED MODE FIXES/CHANGES ***
+- chg: shotguns and projectiles now hit a slightly scaled model of the player to increase
+       hit probability, the scale factor is 1.1 for shotguns and 1.2 for projectiles
+- chg: shotgun innacuracy has been drastically reduced
+       M590_INACCURACY      0.0f
+       M590_MAXINACCURACY   0.5f
+       M590_SPREAD          1.5f
+       USAS_INACCURACY      0.05f
+       USAS_MAXINACCURACY   0.75f
+       USAS_SPREAD          1.75f
+- fix: losing knives when shooting m203 in enhanced mode (yikes!)
+- fix: picking up a backpack while having an m203 waiting for a reload wouldnt give 2 
+       m203s back
+- fix: picking up m203's while waiting for reload       
+*** OTHER CHANGES ****
+- fix: flickering gametype items on scoreboard (briecase,flags,bomb)
+- fix: spectator line drawing one too many lines
+- chg: changed team info interval from 1 second to 2.5 
+- fix: client was asking for osp scores on unpure older versions, or servers with client disabled
+- fix: fixed cvarcheck command, added delay on client before sending info to avoid command flood
+- add: added version check to loading screen, will now warn if server is running a different 
+       version, either older or newer       
+                     
+              
+v0.3f
+====================================================================================
+*** IMPORTANT CHANGES ***
+- add: sv_ospClient cvar (defaults to 1) make it 0 and delete the osp-clientside-0.3*-BETA.pk3
+       file from your server to run a true serverside only OSP server with the 0.3 version of OSP
+- fix: profiled much of the sof2 code and found out where it was having a hard time, so I
+       optimized some function calls that were cpu hungry       
+- add: g_enhancedBugFixes (defaults to 0), temporary CVar to enable the new bug fixes and the
+       enhancements they require in order for them to be balanced
+       NOTE: this cvar lets you be able to run your server in line with your leagues or ladders, 
+       and also lets you test the proposed fixes to Sof2, comments and suggestions will be welcomed
+       on http://www.orangesmoothie.org in the Sof2 forums
+       
+*** CHANGES THAT REQUIRE G_ENHANCEDBUGFIXES TO BE ENABLED ***
+- fix: shotguns and melee weapons now hit crouched players (crouch lean bug)
+       NOTE: in order to fix this problem some of the shotgun's stats had to be readjusted, the shotgun
+       will "feel" different because the hit detection of each pellet is now done like the rifle bullets
+       meaning that they have to hit the "real" player model (hence fixing the crouch and leaning no-hits)       
+       Also the shotguns will fire innacurately when jumping (like the other weapons)
+       M590_INACCURACY      0.0f
+       M590_MAXINACCURACY   1.5f
+       M590_SPREAD          1.5f
+       USAS_INACCURACY      0.5f
+       USAS_MAXINACCURACY   2.0f
+       USAS_SPREAD          1.75f
+- fix: all projectiles now hit leaning players where they should, in default Sof2 all projectiles
+       go through someone who is leaning, not anymore
+       i.e.: projectiles can now wiz by your head if they dont hit your actual player model, 
+       grenades can be thrown between legs instead of bouncing on an invisible wall in front of 
+       the player, etc.
+- add: client: "osp_useKeyForLadders", option to have to press the use key to grab ladders, 
+       disabled by default
+- add: m4 rifles's m203 cannon does not reload automatically any longer, you need to press the alternate
+       fire button a second time for it to reload
+       
+*** OTHER CHANGES ****    
+- fix: blue team name wasnt updated properly and would become set to nothing  
+- add: server browser now shows only OSP servers by default
+- add: OSP version info to load screen
+- fix: display glitches in scoreboard when displaying alot of players
+- add: protection against spawn-telefragging on maps that do not have enough spawn points in inf/elim/dem
+- fix: scoreboard sorting dead players last in respawning gametypes
+- fix: demolition icons not drawing in demolition gametype
+- add: tracer start distance modifier "osp_tracerDistance" default:500 (thanks Kris from mandown)
+- chg: cg_tracerChance's maximum upped from 50% to 100% for more tracers if your system can handle it
+       (for your own tracers only, enemy tracer chance is still capped at 50%)
+- add: referee "chat" command, so that referees can talk to other referees
+- fix: removed lowering of the player names on the osp scoreboard in normal respawn gametypes (ctf,dm,tdm)
+- add: referee "delegate" command, so that referees can make captains
+- fix: made match_fastrestart default to disabled (why was it enabled by default anyways?)
+- add: admin command: "cvarcheck", reports the current setting for the specified cvar/player so admins can
+       see what settings a certain player has       
+- add: new vote "roundrestart", will restart the current round, useful when someone disconnects during a match
+       and the game is paused by an admin
+- chg: removed the 6th line of the MOTD in order to have a line to inform players about the bug fixes       
+- add: "osp_oldConsole", disabled by default, switches the console background to the default sof2 one
+
+
+v0.3e
+====================================================================================
+- fix: mac crash resolved!
+- fix: scoreboard clients overlapping each other
+- fix: team overlay showing bad data (again)
+- todo: add client/server mismatch checking
+
+
+v0.3d
+====================================================================================
+- fix: minor mess up on my part so i've decided to make a new release to clear 
+       everything up, the client pk3 in the server pak wasnt the same as in the client zip
+- fix: draw team overlay now limits to the correct amount of players
+- fix: team overlay overlapping health in old hud
+- fix: scoreboard info was way too long, might be causing the "duplicates" of player #0
+       on scoreboard
+- fix: too many stats on scoreboard
+
+
+v0.3c
+====================================================================================
+- fix: dm and tdm gametypes crashes on load with new hud
+- add: old style bar health in new hud, set osp_numericalHealth 1 for numerical values
+- fix: team overlay drawing dead players
+- chg: overlay and hud backgrounds were too transparent
+- chg: team overlay can now be limited to a certain amount of players
+- chg: new hud icons not drawn anymore in infiltration, with the old hud
+- chg: data display was a bit too dark on the scoreboard
+- fix: autorecord and autoscreenshot dont activate even when disabled
+- fix: outfitting menu showing disabled weapons
+- fix: description file out of date
+
+
+v0.3a
+====================================================================================
+- add: alot of things!
+- chg: team commands are now only available to the team captain, who is the first 
+       person to join the team, or who has been designated by a previous team captain
+- add: team command 'delegate', delegate captaincy to a teammate
+- add: team command 'invite', invite a spectator to join your locked team
+- add: team command 'remove', remove a player from your locked team, or don't specify
+       an id to remove everyone from the team
+- client: too many things to list, see the OSP options menu from ingame       
+       
+
+------------------------------------------------------------------------------------
+************************************************************************************
+------------------------------------------------------------------------------------
+
+
+v0.2x
+====================================================================================
+- fix: don't count team switch as a death on the scoreboard
+- add: server now logs admin actions
+- fix: dont count teamkill during warmup or setup phase
+
+
+v0.2w
+====================================================================================
+- fix: random map voting fixed
+- fix: /adm strip while zoomed would make the player blind (really now)
+- chg: changed default forcerespawn from 20 to 5, 20 allowed a dead player to stay 
+       dead on the ground watching his enemies moving around for way too long
+- fix: made match_fastRestart take effect even if a mapcycle is set on the server
+- chg: updated the speclocks.cfg file, adding the new 1.03 maps       
+- chg: updated config sample, as well as all the comp/pub configs for all gametypes
+
+
+v0.2v
+====================================================================================
+- fix: phone bringing back people from the dead!
+- chg: sv_enableAdmins is now sv_enableAdminPowers, which will turn off all the admin
+       powers instead of disabling admins completely, excluding kick-prevention
+- chg: /adm suspend now behaves as if admin powers were disabled on the server instead
+       of demoting the admin to referee
+- fix: referees weren't getting updated as to speclocking       
+- fix: /adm strip while zoomed would make the player blind
+- fix: settings vote with no value specified now echo the current setting
+- add: added g_warmup to the list of voteable settings
+- add: /players now says if an admin's powers are on or off
+- add: /addadmin now echos to console
+- add: new rcon command, "restart" specify a delay for the restart in seconds as the
+       argument (i.e.: restart in 5 seconds would be "restart 5"
+- chg: shuffleteams and swapteams now also restart the game
+- fix: stats for alternate fire weren't being added up correctly
+
+
+v0.2u (compatible with SoF2 1.03)
+====================================================================================
+- fix: weapon disabling was broken, now fixed
+
+
+v0.2t
+====================================================================================
+- fix: sv_messageFiltering 2 wasnt preventing the sent message from going out
+- fix: messagefiltering would only filter the first occurance of a bad word
+- fix: admin extra commands would print text as rcon say "server:"
+- fix: phone/slap killing was removing carried items completely, now phone/slap
+       doesn't kill anymore
+- fix: speclock wouldn't hold through map_restarts
+       
+
+v0.2s
+====================================================================================
+- chg: can now respawn in warmups of all gametypes
+- fix: going to intermission if exitrules are satisfied in warmup
+- fix: crashbug with osp obituaries
+- chg: changed apparence of headshot indicator
+- add: new tokens, give nice visual bar formatted health and armor
+       #B: Current health in bar format
+       #b: Current armor in bar format
+- fix: adm strip problems causing asserts in pmove, fixed by setting weapon animation
+
+
+v0.2r
+====================================================================================
+- add: cant make msgs with only ^ or ^^
+- fix: make follow mode not drop to freefloat when following someone who dies
+- add: message filter,needs a map restart to take effect
+       add "bad" words to osp_messagefilter.cfg, separate them however you like
+       (max filesize is 2k)
+       sv_messageFiltering 0 : off
+       sv_messageFiltering 1 : replaces bad words with '*'
+       sv_messageFiltering 2 : when a bad word is found the message is not printed
+- add: new "punish" admin commands
+       /adm phone <id#> :hit someone on the head with the phone
+       /adm strip <id#> :remove someone's weapons
+- fix: #F token was calling the #T token instead of closest teammate
+- fix: bug with the tracking of kills in stats fixed
+- add: print headshot when you kill someone with a headshot
+- fix: adm strip problems, not removing everything
+- add: server side obituaries for death messages (adds (HEADSHOT) besides death message)
+       g_ospDeathMessages 1 to enable
+- add: sv_enableAdmins, defaults to 1, if disabled will prevent any admin behavior on the server
+       needs a map_restart to take effect       
+
+
+v0.2q
+====================================================================================
+- chg: REMOVED REAL GRENADES AND FIXED SHOTGUN, in order to have OSP be a pure match mod
+- add: new cvar match_fastRestart, defaults to 1, if your server is not using a mapcycle
+       (sv_mapcycle set to nothing or to "none") when fastrestart is enabled it will only
+       restart the game with a map_restart instead of reloading everything once you hit
+       the intermission
+- add: /adm suspend now plays sounds and prints to center screen as well as console to make
+       it more obvious when someone uses it
+- chg: admins can now freefloat even if the server has g_forcefollow turned on
+- add: new cvar, sv_nolagGlassBreaks, defaults to on, optimizes sending of glass break events
+       to the clients, simultaneous glass breaks (within 100 ms) will only be sent if separated
+       by at least 500 game units (fixes terrible lag on raven when someone nades the glass entrances)       
+- chg: g_voiceTalkingGhosts now has 2 modes, if you set it to 1, dead players wont be able to
+       say_team to live teammates, and will only be able to talk globally, if you set it to 2
+       they will be able to talk to their live teammates with say_team (good for clans who
+       want to play on equal grounds with other clans that use voice comms)
+- fix: /tcmd ready wasnt updating people's names to remove not ready colors
+- chg: team_nocontrols changed to team_controls, behavior reversed
+- add: can now uninvite all invited spectators by typing /tcmd specuninvite with no id# specified
+- chg: put the admin's name back on /adm talk since you can see who's an admin from the /players 
+       list
+- chg: players that become referees by using the password cannot be callvote unreferee-d
+- add: added g_dowarmup to callvoteable options, missed it back when i did votes
+- chg: g_coloredTeamplayNames now re-enabled, defaults to 0, enable will allow all colors in the name
+
+
+v0.2p
+====================================================================================
+- add: added g_radarFix to /settings output
+- fix: dont send ready-up message while motd is displayed
+- fix: fixed locked and full team messages
+- fix: names still colored after /ref ready or /callvote start_match
+- fix: ghost players getting blacked out instead of cycled through the rest of their team
+- fix: swapping default team names
+- fix: ref speclock both teams wasnt working
+- chg: match_swap will now try to do a hot restart, to prevent reloading of level after
+       scorelimit or timelimit has been reached
+- note: g_forcerespawn should be changed to 3 instead of 20, to prevent people from lying dead 
+       on the ground and watching the enemy around them, competition configs have been changed
+       accordingly
+- add: vote string now displays inactivity time so people know if the kick applies to an afk player
+- chg: frags not logged during warmup any longer
+- fix: g_voteKickBanTime wasnt being used
+
+
+v0.2o
+====================================================================================
+- fix: target, damaged and friend fixed
+
+
+v0.2n
+====================================================================================
+- fix: small problem with fixed shotgun not being fixed :)
+- add: new cvar, g_teamTokensOnly, if turned on will only allow tokens in team say modes
+- add: new chat tokens
+  #I Current pistol
+  #i Current pistol (short)
+  #P Current primary weapon
+  #p Current primary weapon (short)
+  #S Current secondary weapon
+  #s Current secondary weapon (short)
+  #G Current grenades
+  #g Current grenades (short)
+  #e Current equipment
+- fix: warmup tk not showing blood
+- fix: talking ghosts and specs not showing *ghost* and *spec* tags  
+
+
+v0.2m
+====================================================================================
+- chg: added final touches to fixedshotgun, previous version had too high innacuracy
+- fix: speclock now really speclocks, and doesnt send speclocked players to a dead
+       player's POV anymore
+- add: team settings are now saved through map changes and restarts
+- add: new ref commands, added the team commands to the ref commands, so he can quickly
+       set the teams up if they are inexperienced with OSP
+- chg: ref can no longer spectate both teams if he is not invited (while speclocked) but
+       an admin can, unless he does /adm suspend
+- chg: players command now shows you if you're admin or ref in the listing
+- fix: fixed some echo-ing of team commands
+- fix: fixed the sound effect for locking teams
+- add: enabled g_voiceTalkingGhosts cvar, if turned on ghosts and specs will be able to
+       chat to live players
+       NOTE: this cvar defaults to 1 in regular Sof2 so it might be written down to your
+       sof2mp.cfg, make sure to turn it off by setting it to 0
+- add: callvote kick now prints the tk % of the kicked player next to his name in the vote
+       string
+- add: /settings command, now shows a list of server settings
+- chg: g_friendlyFire, if you set it to 2, people will be able to TK during warmup
+- chg: /players command now shows team the player is on (by the color of his name)
+
+
+v0.2l
+====================================================================================
+//looks too much like 1! :)
+
+
+v0.2k
+====================================================================================
+- fix: admin and ref settings security hole
+
+
+v0.2j
+====================================================================================
+- fix: session data now sticks between gametype changes (i.e.: admin sticks)
+- chg: moved default voteable config files to the /configs directory
+- fix: added changes from earlier versions to sample config file
+- chg: moved speclocks.cfg to "data" dir
+- fix: added carriage return after admin change console output
+- fix: restart after pause now outputs "go" to console, for personnal logging
+
+
+v0.2i
+====================================================================================
+- fix: addadmin not working right away
+- fix: extra commands security hole
+
+
+v0.2h
+====================================================================================
+- chg: changed g_adminfile to sv_adminfile, default filename is now "osp_admins.cfg"
+- add: added sv_refereePassword (defaults to "none") permits users to become referees
+       by typing /ref "password" in the console
+- add: sv_extracommands default filename is "osp_extracommands.cfg", this file lists commands 
+       and cvars that admins can have access to through the /adm command, for example, if 
+       you're running PB and you want the admins to be able to ask for screenshots, you
+       just have to put the line "pb_sv_getss" in your extracommands.osp file, and then
+       admins can do /adm pb_sv_getss #
+       NOTE: the commands are case sensitive, so make sure you spell them out correctly
+
+
+v0.2g
+====================================================================================
+- chg: optimized the way admins are checked and loaded
+- fix: fixed the "blue team" has defended briefcase error
+- fix: ref commands not working for admins
+- fix: paused warmup now pauses the warmup countdown
+- chg: refined colors for colorcoded health and armor tokens
+
+
+v0.2f
+====================================================================================
+- fix: fixed say_teamnl
+- fix: delayed admin check to prevent lag when there's alot of spectators watching
+- chg: team change broadcasting now uses the team names if set
+- fix: blue team name doesnt reset anymore
+- fix: turning off radarfix in middle of game now resets the broadcasting
+
+
+v0.2e
+====================================================================================
+- fix: adm mute now works like it is supposed to
+- add: team_maxplayers will determine how many players you can have on each team, a better
+       way to limit the number of people playing then g_maxGameClients because you can't have
+       teams with more players than half your server limit (for instance)
+- add: g_radarFix, if turned on, you will always see your teammate's icons
+       (might lag lower end systems because of extra processing, use for matches, or servers
+       with less than 16 players)
+- add: speclock for matches, specs will be moved outside the map looking down, unable to see 
+       any of the players, useful when you dont want the other team's subs following your team
+       or watching you in freefloat
+- rem: removed OSP debugging, crash seems to have went away
+- chg: g_dowarmup 2, now allows players to play some team deathmatch while they wait
+       for everybody to be ready, old scoreboard-only setup is gone
+       additionnaly the team counts on the HUD will display #ready/#onteam, and the names of the
+       players who are not ready will be darkened on the scoreboard
+- add: team commands, enabled when team_nocontrols is 0 (default 1)
+       /tcmd ? (list team commands)
+       /tcmd commands (same as ?)
+       /tcmd info (gives info about the people on your team and other team settings)
+       /tcmd name (sets your team name for gametype messages)
+       /tcmd lock (lock your team so no one can join)
+       /tcmd unlock (unlock your team)
+       /tcmd speclock (lock your team from spectators, they won't be able to watch you play)
+       /tcmd specunlock (unlock your team from spectators, spectating will be allowed)
+       /tcmd specinvite #id (allow player with #id to spectate your team while it is speclocked)
+       /tcmd specuninvite #id (uninvite player with #id)
+       /tcmd timeout (pauses the game for match_timeoutlength seconds)
+       /tcmd timein (abort a timeout)
+- add: when starting a match in g_dowarmup 2, during the warmup, team names will be displayed
+       in <red> vs <blue> fashion
+- add: new options for /follow, can now /follow red to cycle only through reds, or /follow blue
+       to cycle only through blue
+- add: new admin command pause
+       /adm pause (will pause the game!)
+       /adm unpause (will resume the action)
+- add: team cvars:
+       
+              
+
+v0.2d
+====================================================================================
+- fix: removed colored names, might crash server, not sure yet
+- fix: removed anything that had to do with colored names
+- add: added osp function debugging, will log to debug.log, if a crash occurs make sure 
+       to mail it to kilderean@threewave.com
+- add: g_fixedShotgun, defaults to on (1), fixes accuracy bugs with raven shotgun       
+- fix: fixed /ref allready so it works now
+- chg: match_swap will not restart anymore, if you don't want to mapcycle you will need 
+       to set sv_mapcycle "none"
+- fix: match_swap and match_shuffle will not break the server anymore
+
+
+v0.2
+====================================================================================
+- fix: fixed demolition, planting bomb close to round timelimit, now round extends
+       until bomb is defused
+- add: auto stats dump at end of round
+- chg: intermission waits 10 seconds minimum instead of 5 seconds
+- add: new callvote system, type /callvote ? in console to see a list of the available
+       new votes:
+       comp (load a set of hardcoded or server defined competition settings for the current gametype,
+            create a file named osp_*_comp.cfg with the competitive settings you want, where * is the 
+            gametype (ie: dm,inf...)
+       pub  (load a set of hardcoded or server defined public settings for the current gametype)
+            create a file named osp_*_pub.cfg with the public settings you want, where * is the gametype 
+            (ie: dm,inf...)
+       referee (give someone referee powers)
+       unreferee (remove someone's referee privileges
+       shuffleteams (shuffle the teams up)
+       swapteams (swap the two teams)
+- add: referee system, if allowed referees may now be voted in, they can set anything
+       that voting allows, and they also have a few commands available (type /ref)
+       /ref talk (talk to everyone on server)
+       /ref allready (ready everyone for match to start)
+- add: g_coloredTeamplayNames
+       set to 0 for no colors
+       set to 1 for restricted colors, based on your team color (ie no blue colors in name when on red team)
+       set to 2 for unrestricted colors
+- add: match cvars
+       match_swap 1 : swaps teams once the scorelimit is reached (or timelimit)
+- add: competitive match warmup
+       g_doWarmup 2 : will show the scoreboard while the players ready up by clicking the attack button, or
+       typing /ready in the console, once everybody is ready will switch to warmup and start match
+- add: new admin command
+       /adm suspend : suspends admin powers (ie: following other team) and commands, except another
+       suspend which will reenable the powers, useful if an admin wants to play a competitive match
+       /adm mute : mute a player so he cant chat anymore
+- add: chat tokens, tokenize your chat strings by replacing special symbols with useful info
+       #A : Current armor
+       #a : Current armor with colorcoding
+       #H : Current health       
+       #h : Current health with colorcoding
+       #D : Last player to hurt you
+       #d : Last player to hurt you with his colored name
+       #T : Last player you hurt
+       #t : Last player you hurt with his colored name
+       #F : Closest teammate
+       #F : Closest teammate with colored name
+       #l : Your current location
+       note: chat tokens only work while you're playing and alive
+- add: g_alternateSort, alternate sorting method for client scores, will show different value on scoreboard
+       g_alternateSort 0 : default Sof2 score sorting
+       g_alternateSort 1 : sort players by their kill/death ratio
+       g_alternateSort 2 : sort players by kills per minute 
+       
+
+v0.1
+====================================================================================
+- add: motd through centerprinting 
+       (made configurable with server_motd0 thru server_motd5)
+       /motd in console to bring it back up
+- add: /players command to list players on server, with id# and various info
+- add: /stats # command, gives out detailed stats about yourself, or if a client id# 
+       is specified, about that player
+- add: /statsall gives a quick accuracy perc about everyone on the server, based on
+       what weapons they are outfitted with (only for inf and elim)
+- add: an alarm goes off to warn you when you're the last player alive on your team
+- add: commands system for ingame help, type /? or /commands in console, or type
+       /<ospcommand> ? to get help about that command
+- add: basic admin system, the admin supersedes the referee
+       access the admin commands by using the /adm command
+       available admin commands are:
+       /adm talk <msg>
+       /adm chat <msg>
+       /adm kick id# <reason>
+       /adm ban id# time# <reason>
+       /adm cancelvote
+       /adm strike id#
+       The server administrator can add admins by going ingame and doing /addadmin id#
+       or remove them by doing /removeadmin id#, the admins are determined by their GUID
+       keys, so it is essential that punkbuster be running. The admins are held in a text
+       file specified by g_adminFile, which defaults to "sof2.admins". You can edit this file
+       to add or remove admins.
+       NOTE: Admins can also spectate any player, while playing, make sure no admins are playing
+       in official matches, thats what referees are for.
+- add: g_spectatorInactivity, time in seconds someone can spectate before being booted off
+       the server (useful for popular servers that are always full) defaults to off (0)
+- add: vote_limit, number of votes someone can cast during a game, defaults to 3, set
+       it to 0 to disable it
+       vote_percent (default voting percentage needed to have a vote pass) defaults to 50%
+- add: g_realGrenades, if turned on (1) will make grenades explose when their timer expires, like
+       real grenades do, except for the AN-M14, which will still only explode when it touches the 
+       ground
+
+
+</FONT>
+</pre>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr SIZE="1" NOSHADE WIDTH="100%" COLOR="#000000">
+      </OL>
+    </FONT>
+  </BODY>
+</HTML>

@@ -1,0 +1,542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.orangesmoothie.org/html-news.shtml -->
+<HTML>
+  <HEAD>
+    <TITLE>html-top</TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <META content="MSHTML 6.00.2800.1106" name="GENERATOR">
+    <STYLE type="text/css">BODY { SCROLLBAR-FACE-COLOR: #e76b00; SCROLLBAR-HIGHLIGHT-COLOR: #000000; SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ec840b; SCROLLBAR-BASE-COLOR: #e76b00; scrollbar-3d-light-color: #000000; scrollbar-dark-shadow-color: #000000 }
+	</STYLE>
+  </HEAD>
+  <BODY text="#000000" vLink="#ffcc2e" aLink="#ffcc2e" link="#ffcc2e" bgColor="#ec840b" background="images/bg-news.jpg">
+    <CENTER><IMG height="350" src="images/blender.jpg" width="290" align="right"><IMG src="images/osp_small.gif" border="0">
+    </CENTER>
+    <HR width="100%" color="#000000" noShade SIZE="1">
+    <FONT face="Arial,Helvetica" size="2">
+      <H3>
+        OSP for Soldier of Fortune 2 : Double Helix
+        <BR>
+        <a href="root.htm">Official documentation</a>
+      </H3>
+      <OL>
+        <h4>Playing on an OSP server</h4>
+        <table width="500">
+          <tr>
+            <td>
+              <h5><a name="a">Client commands</a></h5>
+              <font size="2">You can play on an OSP server without changing much of your usual 
+                Sof2 experience, but there are some added client commands that can be very 
+                helpful, and enhance your game.
+                <br>
+                <br>
+                <b>Note : all commands must be preceded by a slash '/' to be executed.</b> </font>
+              <br>
+              <br>
+              <table cellPadding="2" width="720" border="2" bgcolor="#e36600" style="BORDER-COLLAPSE: collapse" cellspacing="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000">
+                <tr bgcolor="#000000">
+                  <td width="20%"><font size="2" color="#ffffff"><b>Command</b></font></td>
+                  <td width="25%"><font size="2" color="#ffffff"><b>Arguments</b></font></td>
+                  <td><font size="2" color="#ffffff"><b>Effect</b></font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">?</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Prints the list of client commands to the console 
+                      in an easy to read format.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">follow</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>id#|red|blue</i></font></td>
+                  <td valign="top"><font size="2">Follows the player specified by [id#] or the 
+                      specified team.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">motd</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Displays the server's message of the day.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">ready<br>
+                      notready</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Set your status to <b>ready</b> or <b>not ready</b> 
+                      in ready-up mode.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">players</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Lists players on the server with information such 
+                      as team, snaps, rate, authority (ref/admin).</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">say_teamnl</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>message text</i></font></td>
+                  <td valign="top"><font size="2">Team message without the location indicator besides 
+                      your name.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">stats</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>none|id#</i></font></td>
+                  <td valign="top"><font size="2">Outputs your personnal stats if no arguments are 
+                      given, or the stats of the player specified by [id#].</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">statsall</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Outputs quick accuracy stats for every player on 
+                      the server.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">tokens</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Message tokens help display, lists all the 
+                      available tokens with a brief description.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">matchinfo</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>none|r|b</i></font></td>
+                  <td valign="top"><font size="2">Display current match settings for both or 
+                      specified team, same information as calling the info team command, information 
+                      such as current invited spectators, lock statuses.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">settings</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Display a list of important server settings, good 
+                      for quickly checking that a server has the correct settings for a match.</font></td>
+                </tr>
+          <TR>
+            <TD vAlign=top width="20%"><FONT size=2>+stats</FONT></TD>
+            <TD vAlign=top width="25%"><FONT size=2></FONT></TD>
+            <TD vAlign=top><FONT size=2>Just like score, bind this to a key 
+              and hit it to show hit location percentiles of where you hit the 
+              most, and where you've been hit the 
+        most</FONT></TD></TR>
+              </table>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="b">Team commands</a></h5>
+              <font size="2">Team commands are used by teams and players to setup for matches. 
+                They are only available if <b>team_controls</b> is enabled on the server.
+                <br>
+                <br>
+                <b>Note : all team commands must be preceded by "/tcmd "</b> </font>
+              <br>
+              <br>
+              <table cellPadding="2" width="720" border="2" bgcolor="#e36600" style="BORDER-COLLAPSE: collapse" cellspacing="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000">
+                <tr bgcolor="#000000">
+                  <td width="20%"><font size="2" color="#ffffff"><b>Command</b></font></td>
+                  <td width="25%"><font size="2" color="#ffffff"><b>Arguments</b></font></td>
+                  <td><font size="2" color="#ffffff"><b>Effect</b></font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">?</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Prints the list of team commands to the console in 
+                      an easy to read format.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">info</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Prints information about your team; while in 
+                      ready-up mode, you can see who is ready and who isn't quickly, you can see if 
+                      your team is join locked, if your team is spectator locked, if you have invited 
+                      spectators and your remaining amount of timeouts.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">reset</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Reset each of your team's settings to default, take 
+                      note that you can not perform this command during the match, only in the warmup 
+                      or ready-up period.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">ready</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Force each member of your team to be ready in 
+                      ready-up mode.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">name</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>name</i></font></td>
+                  <td valign="top"><font size="2">Set your team's name, which will be used in 
+                      gametype related messages, take note that you can not change your team's name 
+                      once the match has begun.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">lock<br>
+                      unlock</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Allow or disallow team joining for your team.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">speclock<br>
+                      specunlock</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Allow or disallow spectating of your team.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">specinvite<br>
+                      specuninvite</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>none|id#</i></font></td>
+                  <td valign="top"><font size="2">While your team is locked from spectating you can 
+                      allow certain spectators to watch your team by inviting them, specify which 
+                      player with [id#], uninvite them the same way, or uninvite everyone spectating 
+                      your team by not specifiying an id#.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">timeout<br>
+                      timein</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">If timeouts are allowed on the server, your team 
+                      can call a timeout for a specified amount of time (game is paused), you can 
+                      wait out the timeout, or resume gameplay by issuing a timein command.</font></td>
+                </tr>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">delegate</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>id#</I></FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Delegate someone from your team to be team captain 
+                      in your stead.</FONT></TD>
+                </TR>
+              </table>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="c">Calling votes</a></h5>
+              <font size="2">As in default Sof2, you can call votes by using the command line 
+                in OSP. For the time being, the new OSP votes are only available through 
+                console voting because there is no client side. Use the <b>/callvote</b> command 
+                to call the following OSP specific votes. </font>
+              <br>
+              <br>
+              <table cellPadding="2" width="720" border="2" bgcolor="#e36600" style="BORDER-COLLAPSE: collapse" cellspacing="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000">
+                <tr bgcolor="#000000">
+                  <td width="20%"><font size="2" color="#ffffff"><b>Vote</b></font></td>
+                  <td width="25%"><font size="2" color="#ffffff"><b>Arguments</b></font></td>
+                  <td><font size="2" color="#ffffff"><b>Effect</b></font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">?</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Prints the list of voteable options allowed on the 
+                      server.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">pub<br>
+                      comp</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Loads a custom configuration for the server, from 
+                      the files located in /sof2/osp/configs or a hardcoded list of settings if the 
+                      files are not available.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">start_match</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Force a match start while waiting in ready-up mode.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">referee<br>
+                      unreferee</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>id#</i></font></td>
+                  <td valign="top"><font size="2">Make the player specified by id# a referee, or 
+                      remove his referee status.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">shuffleteams</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Shuffle the teams up, useful when teams want to 
+                      quickly even the teams. Take note that players will be sorted according to 
+                      their current kill/death ratio, so if the match just started the shuffling will 
+                      be mostly random.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">swapteams</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Swap the two teams up, red will now play on blue, 
+                      and blue on red.</font></td>
+                </tr>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">roundrestart</FONT></TD>
+                  <TD vAlign="top" width="25%"></TD>
+                  <TD vAlign="top"><FONT size="2">Restarts the current round.</FONT></TD>
+                </TR>
+          <TR>
+            <TD vAlign=top width="20%"><FONT size=2>balanceteams</FONT></TD>
+            <TD vAlign=top width="25%"><FONT size=2></FONT></TD>
+            <TD vAlign=top><FONT size=2>Will balance teams by using players' 
+              kill/death ratio as the sorting 
+        value</FONT></TD></TR>
+              </table>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="c">Chat tokens</a></h5>
+              <font size="2">When you play on OSP servers you can have the server place certain 
+                text in your messages automatically, these are called tokens. Use them in your 
+                messages to quickly give accurate information about your status. </font>
+              <br>
+              <br>
+              <table cellPadding="2" width="720" border="2" bgcolor="#e36600" style="BORDER-COLLAPSE: collapse" cellspacing="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000">
+                <tr bgcolor="#000000">
+                  <td width="10%"><font size="2" color="#ffffff"><b>Token</b></font></td>
+                  <td><font size="2" color="#ffffff"><b>Effect</b></font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#h<br>
+                      #H</font></td>
+                  <td valign="top"><font size="2">Inserts your current numerical health with 
+                      colorcoding in lowercase and without it in uppercase.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#a<br>
+                      #A</font></td>
+                  <td valign="top"><font size="2">Inserts your current numerical armor with 
+                      colorcoding in lowercase and without it in uppercase.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#d<br>
+                      #D</font></td>
+                  <td valign="top"><font size="2">Inserts the name of the last player that hurt you.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#t<br>
+                      #T</font></td>
+                  <td valign="top"><font size="2">Inserts the name of the last player that you hurt.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#f<br>
+                      #F</font></td>
+                  <td valign="top"><font size="2">Inserts the name of the closest teammate.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#l<br>
+                      #L</font></td>
+                  <td valign="top"><font size="2">Inserts your current location. Note: useful in 
+                      tandem with the say_teamnl command (which is a team message without the 
+                      location). Useful if you want to format it with special colors.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#i<br>
+                      #I</font></td>
+                  <td valign="top"><font size="2">Inserts the name of your currently equipped 
+                      handgun, if you use the token in upper case it will print a short name for the 
+                      weapon.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#p<br>
+                      #P</font></td>
+                  <td valign="top"><font size="2">Inserts the name of your currently equipped primary 
+                      weapon, if you use the token in lower case it will print a short name for the 
+                      weapon.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#s<br>
+                      #S</font></td>
+                  <td valign="top"><font size="2">Inserts the name of your currently equipped 
+                      secondary weapon, if you use the token in lower case it will print a short name 
+                      for the weapon.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#g<br>
+                      #G</font></td>
+                  <td valign="top"><font size="2">Inserts the name of your currently equipped 
+                      grenade, if you use the token in lower case it will print a short name for the 
+                      weapon.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#g<br>
+                      #G</font></td>
+                  <td valign="top"><font size="2">Inserts the name of your currently equipped 
+                      grenade, if you use the token in lower case it will print a short name for the 
+                      weapon.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#e<br>
+                      #E</font></td>
+                  <td valign="top"><font size="2">Inserts the name of your current equipment (armor, 
+                      nightvision, infrared).</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#B</font></td>
+                  <td valign="top"><font size="2">Inserts your current health in a nice bar format.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="10%" valign="top" align="middle"><font size="2">#b</font></td>
+                  <td valign="top"><font size="2">Inserts your current armor in a nice bar format.</font></td>
+                </tr>
+              </table>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="e">Client</a> side CVars</h5>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table cellPadding="2" width="720" border="2" bgcolor="#e36600" style="BORDER-COLLAPSE: collapse" cellspacing="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000" ID="Table1">
+                <tr bgcolor="#000000">
+                  <td width="20%"><font size="2" color="#ffffff"><b>Name</b></font></td>
+                  <td width="25%"><font size="2" color="#ffffff"><b>Values</b></font></td>
+                  <td><font size="2" color="#ffffff"><b>Effect</b></font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top">
+                    <P><font size="2">osp_drawCrosshairInfo</font></P>
+                  </td>
+                  <td width="25%" valign="top"><font size="2"><i>setting [0,1]</i><br>
+                      disable: 0<br>
+                      default: 1</font></td>
+                  <td valign="top"><font size="2"> Draw additionnal information about the teammate 
+                      you are looking at.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2"><FONT size="2">osp_drawClock</FONT></font></td>
+                  <td width="25%" valign="top"><font size="2"><i>setting [0,1]</i><br>
+                      disable: 0<br>
+                      default: 1</font></td>
+                  <td valign="top"><font size="2"> Draw the&nbsp;current system time&nbsp;on the 
+                      right side of the screen.</font></td>
+                </tr>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_drawTeamOverlay</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,16]</I><BR>
+                      disable: 0<BR>
+                      default: 8</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Draw constant&nbsp;overlay information about your 
+                      teammates in the lower left part of the screen. The number specifies the 
+                      maximum you want displayed.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_autoRecord</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,1]</I><BR>
+                      disable: 0<BR>
+                      default: 1</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Automatically record all matches played.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_autoScreenshot </FONT>
+                  </TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,1]</I><BR>
+                      disable: 0<BR>
+                      default: 1</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Automatically take&nbsp;a screenshot after each 
+                      game.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_simpleHud </FONT>
+                  </TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,1]</I><BR>
+                      disable: 0<BR>
+                      default: 1</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Use&nbsp;the OSP simplified hud.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_oldScoreboard </FONT>
+                  </TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,1]</I><BR>
+                      disable: 0<BR>
+                      default: 1</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Draw the scoreboard using the default Sof2 layout.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_numericalHealth</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,1]</I><BR>
+                      disable: 0<BR>
+                      default: 1</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Draw health in numerical values in the OSP hud.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_tracerDistance</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,x]</I><BR>
+                      default: 500</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Distance the bullet tracer starts from.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_useKeyForLadders</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,1]</I><BR>
+                      disable: 0<BR>
+                      default: 0</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">You can only grab onto ladders if you press the 
+                      'use' key.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_oldConsole</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>setting [0,1]</I><BR>
+                      disable: 0<BR>
+                      default: 0</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Switch the console background graphics back to the 
+                      default Sof2 one.</FONT></TD>
+                </TR>
+              </table>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+    </FONT>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr SIZE="1" NOSHADE WIDTH="100%" COLOR="#000000">
+</OL>
+  </BODY>
+</HTML>

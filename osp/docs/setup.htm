@@ -1,0 +1,464 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.orangesmoothie.org/html-news.shtml -->
+<HTML>
+  <HEAD>
+    <TITLE>html-top</TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <META content="MSHTML 6.00.2800.1106" name="GENERATOR">
+    <STYLE type="text/css">BODY { SCROLLBAR-FACE-COLOR: #e76b00; SCROLLBAR-HIGHLIGHT-COLOR: #000000; SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ec840b; SCROLLBAR-BASE-COLOR: #e76b00; scrollbar-3d-light-color: #000000; scrollbar-dark-shadow-color: #000000 }
+	</STYLE>
+  </HEAD>
+  <BODY text="#000000" vLink="#ffcc2e" aLink="#ffcc2e" link="#ffcc2e" bgColor="#ec840b" background="images/bg-news.jpg">
+    <CENTER><IMG height="350" src="images/blender.jpg" width="290" align="right"><IMG src="images/osp_small.gif" border="0">
+    </CENTER>
+    <HR width="100%" color="#000000" noShade SIZE="1">
+    <FONT face="Arial,Helvetica" size="2">
+      <H3>
+        OSP for Soldier of Fortune 2 : Double Helix
+        <BR>
+        <a href="root.htm">Official documentation</a>
+      </H3>
+      <OL>
+        <h4>Setting up an OSP server</h4>
+        <table width="500">
+          <tr>
+            <td>
+              <h5><a name="a">Running a mod</a></h5>
+              <font size="2">Running a modification under Soldier of Fortune 2 is pretty easy 
+                but requires some basic knowledge that I dont have time to give here, if you 
+                require more information you can always consult the <a href="http://www.gameadmins.com">
+                  http://www.gameadmins.com</a> website. In simple terms you need to first 
+                install the modification on your server, usually meaning to <b>unzip the package 
+                  to the server's sof2 directory</b>. Once that is done, there should be a 
+                directory named /osp in your /sof2 directory. Once you have that, starting the 
+                server is as easy as starting a default server, just add <b>+set fs_game osp</b>
+                to your command line.<br>
+                <br>
+                <b>Note</b> : all files relating to your server will now be found under the osp 
+                directory in the directory specified by <i>fs_homepath</i> if you are running a 
+                linux server, or your <b>sof2/osp</b> directory if you're running a windows 
+                server. </font>
+              <br>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="b">Setting up a public server</a></h5>
+              <font size="2">To setup a public server, you can use the default configuration 
+                files found in the <b>/sof2/osp/configs/</b> directory, they follow a naming 
+                scheme like so <i>osp_</i><b>[gametype]</b><i>_pub.cfg</i>, where <b>[gametype]</b>
+                is the short name for the gametypes (dm,tdm,elim,ctf,inf,dem). These files are 
+                taylored for general public servers, and should satisfy most server admins out 
+                there. To use one of these files to start your server, just add <b>+exec 
+                  configs/[config file]</b> to the command line you use to start the server.<br>
+                <br>
+                Note : you should open the files and read the settings, each of them are well 
+                documented in comments. Also, the files in the configs directorywill also be 
+                used when someone calls a vote for a config load vote. See the <b>callvote 
+                  section</b> for more details about voteable configs. </font>
+              <br>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="c">Setting up a competitive server</a></h5>
+              <font size="2">Setting up a competitive server is done pretty much like a public 
+                server, the suggested settings for each gametype can be found under the 
+                sof2/osp/configs directory and will be named <i>osp_</i><b>[gametype]</b><i>_comp.cfg</i>. 
+                Use the same technique as described for public servers to load the settings 
+                from your command line. </font>
+              <br>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="d">OSP server CVARs descriptions</a></h5>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table cellPadding="2" width="720" border="2" bgcolor="#e36600" style="BORDER-COLLAPSE: collapse" cellspacing="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000">
+                <tr bgcolor="#000000">
+                  <td width="20%"><font size="2" color="#ffffff"><b>Name</b></font></td>
+                  <td width="25%"><font size="2" color="#ffffff"><b>Values</b></font></td>
+                  <td><font size="2" color="#ffffff"><b>Effect</b></font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">g_spectatorInactivity</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>time in seconds [0,x[</i><br>
+                      disable: 0<br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Time in seconds a spectator is allowed to idle on 
+                      the server, after the specified time has elapsed, the spectator is booted from 
+                      the server with an appropriate message.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">g_alternateSort</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>sort type [0,1,2]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Sort players on scoreboard using different schemes, 
+                      0 is default score sorting, 1 sorts players by their kill/death ratio 
+                      ((kills/kills+deaths)*100), 2 sorts players by kills per minute.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">g_radarFix</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Always broadcast teammate entities to players in 
+                      team gametypes, fixes the problem with the radar not always showing closeby 
+                      teammates and not seeing teammate icons through walls.</font></td>
+                </tr>
+                <!-- separator -->
+                <!-- separator -->
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">g_coloredTeamplayNames</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Enable colored characters in names for teamplay 
+                      gametypes</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">g_teamTokensOnly</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Only tokenize say_team messages (prevent global say 
+                      abuse)</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">g_voiceTalkingGhosts</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Dead players and spectators will be able to talk to 
+                      live players. Good for servers that host serious players. Note: this is a Raven 
+                      CVAR that I enabled, in the Raven configs it is enabled by default, so you will 
+                      have to turn it off if you use the same config as the default game.</font></td>
+                </tr>
+                <!-- separator -->
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">sv_adminfile</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>filename</i><br>
+                      default: <i>osp_admins.cfg</i></font></td>
+                  <td valign="top"><font size="2">Specifies the file used to store admin GUIDs</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">sv_extracommands</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>filename</i><br>
+                      default: <i>osp_extracommands.cfg</i></font></td>
+                  <td valign="top"><font size="2">File that specifies a carriage-return separated 
+                      list of commands accessible with the /adm commands</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">sv_refereePassword</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>password</i><br>
+                      disable: <i>none</i><br>
+                      default: <i>none</i></font></td>
+                  <td valign="top"><font size="2">Password clients can use to become a referee (/ref 
+                      [password])</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">sv_nolagGlassBreaks</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Prevent glass break events from lagging clients by 
+                      only sending the first one when breaking glass occurs in groups (i.e.: glass 
+                      entrances on mp_raven)</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">sv_messageFiltering</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1,2]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Load a list of "bad" words from <b><i>osp_messagefilter.cfg</i></b>(max 
+                      size 2k) in your OSP directory and prevents people from using them in messages 
+                      on the server. Setting it to 1 will replace the "bad" words with asterisks '*', 
+                      setting it to 2 will prevent the whole message from printing if it contains 
+                      "bad" words.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">sv_enableAdmins</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 1</font></td>
+                  <td valign="top"><font size="2">Enables or disable admins, if you run a match 
+                      server and you play a team wary of you cheating with admin powers, you can turn 
+                      off admins completely. Needs a map_restart to take effect.</font></td>
+                </tr>
+                <!-- separator -->
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">sv_ospClient</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>off|on [0,1]</I><BR>
+                      default: 1</FONT></TD>
+                  <TD vAlign="top">
+                    <P><FONT size="2">Enables or disables support for the client side of OSP (certain 
+                        server behaviors can be turned off to allow the regular Sof2 client to function 
+                        properly with the OSP server. </FONT>
+                    </P>
+                    <P><FONT size="2">Note: in order to run a serverside OSP server, you must delete 
+                        all <STRONG>*.pk3</STRONG> files from your server's /sof2/osp directory.</FONT></P>
+                  </TD>
+                </TR>
+                <tr>
+                  <td width="20%" valign="top"><font size="2">match_swap</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Swap teams at end of match, during intermission</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">match_shuffle</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Shuffle teams at end of match, during intermission<br>
+                      Note: match_swap takes precedence over match_shuffle</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">match_fastRestart</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off|on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Quickly restart the map without reloading once in 
+                      intermission. This setting will prevent mapcycling if enabled.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">match_minplayers</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>minimum [0,x[</i><br>
+                      default: 4</font></td>
+                  <td valign="top"><font size="2">Minimum number of players needed to start a match 
+                      in ready-up mode</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">match_readypercent</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>percentage [0-100]</i><br>
+                      default: 100</font></td>
+                  <td valign="top"><font size="2">Percentage of ready players needed to start a game 
+                      in ready-up mode</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">match_timeoutcount</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>amount [0,x[</i><br>
+                      default: 3</font></td>
+                  <td valign="top"><font size="2">Maximum amount of timeouts for each team per map</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">match_timeoutlength</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>time in seconds [0,x[</i><br>
+                      default: 180</font></td>
+                  <td valign="top"><font size="2">Duration of timeouts in seconds<br>
+                      Note: setting this to 0 means timeouts will be unlimitted</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">server_motd0<br>
+                      server_motd1<br>
+                      server_motd2<br>
+                      server_motd3<br>
+                      server_motd4<br>
+                      server_motd5<br>
+                    </font>
+                  </td>
+                  <td width="25%" valign="top"><font size="2"><i>text</i></font></td>
+                  <td valign="top"><font size="2">Your server's 6 lines message of the day<br>
+                      Note: each line can hold a maximum of 50 characters including color codes</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">team_maxplayers</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>amount [0,x[</i><br>
+                      disable: 0<br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Maximum number of players per team</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">team_controls</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>off/on [0,1]</i><br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Enable the team commands, usually disabled on 
+                      public servers</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">team_redName<br>
+                      team_blueName</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>text</i><br>
+                      default: "Red team"|"Blue team"</font></td>
+                  <td valign="top"><font size="2">The name of the team<br>
+                      Note: only sticks through one map rotation, will reset back to defaults</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">vote_limit</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>limit [0,x[</i><br>
+                      disable: 0<br>
+                      default: 3</font></td>
+                  <td valign="top"><font size="2">Maximum number of votes someone can call in a map<br>
+                      Note: successful votes are not counted, only failed or canceled votes</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">vote_percent</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>percentage [0-100]</i><br>
+                      default: 50</font></td>
+                  <td valign="top"><font size="2">Percentage of 'yes' votes needed for a vote to pass</font></td>
+                </tr>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">g_alternateMap</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><FONT size="2"><FONT size="2"><I>setting 
+                            [0,10]</I></FONT></FONT><BR>
+                      default: 0</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Load the alternate map data from the /osp/data 
+                      directory specified by the value of g_alternateMap.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">g_awards</FONT></TD>
+                  <TD vAlign="top" width="25%">
+                    <P><FONT size="2"><FONT size="2"><I>setting [0,1,2]</I></FONT><BR>
+                        default: 1 (all)<BR>
+                        disable bad awards: 2</FONT></P>
+                  </TD>
+                  <TD vAlign="top"><FONT size="2">End of game award ceremonies.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_friendlyFireMultiplier</FONT></TD>
+                  <TD vAlign="top" width="25%">
+                    <P><FONT size="2">default: 1.0<BR>
+                      </FONT>
+                    </P>
+                  </TD>
+                  <TD vAlign="top"><FONT size="2">When friendly fire is enabled the damage dealt by 
+                      teamates will be multiplied by this value. For example a setting of 0.5 would 
+                      halve all damage dealt by friendly fire.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_modversion</FONT></TD>
+                  <TD vAlign="top" width="25%">
+                    <P><FONT size="2"><FONT size="2"><I>setting [0,1,2]</I></FONT><BR>
+                        default:&nbsp;0 (regular OSP)</FONT></P>
+                  </TD>
+                  <TD vAlign="top">
+                    <P><FONT size="2"><FONT size="2"><FONT size="2">Set the mod version used, previously 
+                            with separate server files now all in one.
+                            <BR>
+                            0 is the default and is regular OSP with regular Sof2.<BR>
+                            1 is the same as OSP++.<BR>
+                            2 is Sof2++, a mode based on OSP using new weapons and tweaked accessories.</FONT></FONT></FONT></P>
+                  </TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_femaleVIP</FONT></TD>
+                  <TD vAlign="top" width="25%">
+                    <P><FONT size="2"><FONT size="2"><I>setting [0,1]</I></FONT><BR>
+                        default:&nbsp;0</FONT></P>
+                  </TD>
+                  <TD vAlign="top"><FONT size="2"><FONT size="2"><FONT size="2">In the new gametype VIP, 
+                          the VIP can be a female model. Set this to 1 to enable.</FONT></FONT></FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_defaultJailTime</FONT></TD>
+                  <TD vAlign="top" width="25%">
+                    <P><FONT size="2">default:&nbsp;60<BR>
+                      </FONT>
+                    </P>
+                  </TD>
+                  <TD vAlign="top"><FONT size="2"><FONT size="2"><FONT size="2">The default time used 
+                          when no time is specified when a admin puts a player in jail.</FONT></FONT></FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_realisticMode</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2">setting [0,1]<BR>
+                      default: 0</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Truly real world damage, rules are: - grenades do 
+                      double damage - bullets all do 95 damage when hitting arms,hands,feet,lower 
+                      legs - bullets do 100 damage when hitting tighs,waist,chest,neck,head - bullets 
+                      hitting the armor covered area of the body (chest,waist,tighs) take a random 
+                      amount of armor away from 0 to 99 and the rest is taken from health (M60 and 
+                      MSG rifle are unnaffected by armor)</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_realisticRespawnInt</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2">setting [0,*<BR>
+                      default: 8</FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Respawn wait time cvar for realistic mode</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">osp_enemyKillReport</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2">setting [0,1]<BR>
+                      default: 1, always disabled in g_doWarmup 2 </FONT>
+                  </TD>
+                  <TD vAlign="top"><FONT size="2">Tell&nbsp;players the remaining health/armor of the 
+                      enemy who just killed them</FONT></TD>
+                </TR>
+              </table>
+              <br>
+              <br>
+            </td>
+            <td>
+          <tr>
+            <td>
+              <h5><a name="e">Standard Sof2 server CVARs with new options</a></h5>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table cellPadding="2" width="720" border="2" bgcolor="#e36600" style="BORDER-COLLAPSE: collapse" cellspacing="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000">
+                <tr bgcolor="#000000">
+                  <td width="20%"><font size="2" color="#ffffff"><b>Name</b></font></td>
+                  <td width="25%"><font size="2" color="#ffffff"><b>Values</b></font></td>
+                  <td><font size="2" color="#ffffff"><b>Effect</b></font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">g_doWarmup</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>setting [0,1,<b>2</b>]</i><br>
+                      disable: 0<br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Added g_doWarmup 2, which is ready-up mode, where 
+                      users need to do /ready in console in order to start the match.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">g_friendlyFire</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>setting [0,1,<b>2</b>]</i><br>
+                      disable: 0<br>
+                      default: 0</font></td>
+                  <td valign="top"><font size="2">Added g_friendlyFire to 2, which enables friendly 
+                      fire during all gameplay including warmup.</font></td>
+                </tr>
+              </table>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+    </FONT>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr SIZE="1" NOSHADE WIDTH="100%" COLOR="#000000">
+    </OL>
+  </BODY>
+</HTML>

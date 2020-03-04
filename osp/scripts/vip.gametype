@@ -1,0 +1,49 @@
+//
+//	GAMETYPE:		V.I.P.
+//
+//      DESCRIPTION:			
+//
+//	ITEMS:			"documents"
+//					
+//
+
+gametype
+{
+	displayname		"V.I.P."
+	respawn			"interval"	
+	pickups			"no"
+	teams			"yes"
+	description		"Try to kill the other team's V.I.P. before they do away with yours."
+	basegametype		"ctf" //escape is based on ctf kinda
+
+	photos
+	{
+		scientist
+		{
+			displayname		"V.I.P."
+		}	
+		documents
+		{
+			displayname		"Top secret documents"
+		}
+	}
+
+	items
+	{
+		red_documents
+		{
+			displayname		"Documents"
+			team			"red"
+			icon			"gfx/menus/hud/documents_small"
+			model			"models/pick_ups/rmg_documents.md3"
+		}
+		blue_documents
+		{
+			displayname		"Documents"
+			team			"blue"
+			icon			"gfx/menus/hud/documents_small"
+			model			"models/pick_ups/rmg_documents.md3"
+		}		
+	}
+}
+

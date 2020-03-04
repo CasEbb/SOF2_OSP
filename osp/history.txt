@@ -1,0 +1,250 @@
+v1.1 
+============================================================================================================
+
+- security:
+  remapShader Remote Exploit             	  (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2236)
+  CS_ITEMS Remote Stack Overflow Exploit (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3401)
+  CG_ServerCommand Exploit 		 (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3400)
+- security: fix quite a few null pointer deferences
+- security: fix crash exploits
+
+- fix: sof2++ flash nade timers 
+- fix: sof2++ anm14 animation timers 
+- fix: sof2++ smoke greande issues 
+- fix: sof2++ OICW explosive damage 
+- fix: balanceteams behavior doesn't need to map restart
+- fix: disable_sof2pp_* and disable_pickup_* now honors all weapons 
+- fix: minor anticheat update
+- fix: UI crashes
+- fix: possible dissappearing models
+
+- chg: cheat protect fx_nearCull and cl_timenudge
+- chg: remove netcode changes from previous version
+- chg: drawfps now polls at 60fps, instead of every 4fps. this will average out to show smoother frame counts
+ 
+- add: osp_fixedhz <0|1> [default 1] serverside cvar. this will impliment 125hz fixed frequency to prevent framerate dependant physics for jumps, weapons etc
+- add: insert osp_fixedhz into /settings and serverinfo. this will show up in a game browser (all seeing eye etc) as being enabled/disabled
+- add: match_mutespecs <0|1> allow/prevents spectators from chatting during a match
+- add: match_latejoin <0|1> prevents/allows players from joining a match 
+- add: cvars to control messing spamming of clients. These default to "0" 
+	- g_msgs <n> Duration in seconds between messages sent to users 
+          Setting g_msgs to 10 will spam a message to all clients every 10 seconds
+	- g_msg<n> <string> where x is a number. Messages will be displayed from lowest to higher (0-9)
+	- g_msgprefix <string> where string is a prefix. ie: set g_msgprefix "^1OSP ^2TEST ^3SERVER:" 
+	- g_msgpos <n> position of messages
+          - <0> screen area
+          - <1> center screen 
+          - <2> console 
+
+v1.0L
+============================================================================================================
+- chg: remove new netcode for production use
+- fix: shaking viewangles
+- fix: netcode, hitboxes
+
+
+v1.0K
+============================================================================================================
+
+- fix: correct some prediction code problems with bogues extrapolations
+- fix: correct leaning hitboxes
+- fix: disable truePing by default
+- fix: respawnInterval/respawnInvulnerability/truePing show up in the server settings (all-seeing eye etc)
+
+v1.0J
+============================================================================================================
+
+- fix: cg_thirdperson wasn't displaying local entity with anticheat
+- fix: improve display of changes to important cvars (respawninterval/respawninvulnerability/sv_cheats/etc)
+- fix: lower the minimum for match requirements from 4 players to 2
+- fix: sof2++ anm14 lasts 8 seconds instead of 45
+- fix: crashes on filehandlers
+- fix: newline output fixes
+- fix: viewheight/POV was lower than expected, corrected back to default
+- fix: anticheat code
+- fix: cl_timenudge now works correctly
+- fix: map restarts automatically unpause a game
+- fix: fix timer bugs with pauses/unpauses
+- fix: killing spree in DM shows odd numbers
+- fix: improve antilag code slightly
+
+- chg: cg_drawfps behavior to get a more accurate FPS count
+- chg: remove smoothclients code to account for the new prediction code (it's all done serverside)
+
+- add: logging for oversized command exploits
+- add: add more output to /settings 
+- add: improve logging of other commands slightly
+- add: cvar to disable or enable displaying of killing sprees, defaults to 0
+       - g_killingspree <0|1>
+         
+v1.0i
+===================================================================================
+- add: Improve anticheat
+- add: Fix serverside buffer overflow exploits
+- fix: More accurate bullet tracing
+- fix: improve antilag code by storing more frames so users with high pings benifit from it
+- fix: some text messages weren't displaying correctly
+- fix: some text messages were corrected
+- chg: uncheat protect pmove_*
+- chg: g_awards is now disabled by default, can be enabled with g_awards 1
+- chg: improve clientside performance on large servers
+
+v1.0h
+===================================================================================
+- add: Some more anticheat stuff.
+- fix: Server runs newer version message.
+
+v1.0g
+===================================================================================
+- add: osp_maxm203perteam default:2
+	Limit the amount of players that get m203 nades with their m4. Set to a high
+	value to disable
+- add: Shotgun lean fix. For sof2++ / Sof2 Vanilla. Credits to KRIS
+- add: Anti-Aimbot code. Will stop aimbots from locking onto players
+
+v1.0f
+===================================================================================
+- add: osp_realisticMode <0|1> (voteable)
+       Truly real world damage, rules are:
+       - grenades do double damage
+       - bullets all do 95 damage when hitting arms,hands,feet,lower legs
+       - bullets do 100 damage when hitting tighs,waist,chest,neck,head
+       - bullets hitting the armor covered area of the body (chest,waist,tighs) 
+         take a random amount of armor away from 0 to 99 and the rest is taken from
+         health (M60 and MSG rifle are unnaffected by armor)
+       - knockback is 25% of the default knockback
+       Note: This is not meant as a replacement to the inconsistent sof2.wpn (usually
+       in a pk3 file named zrest.pk3 or something) real damage package thats already 
+       out there, this is a package for people who would like to play a faster paced game
+       where everybody has a fair chance at scoring some kills. If you use the osp 
+       realistic damage you can be 100% certain that no other modifications are being 
+       used, like for instance making one weapon (the server admin's favorite?) deal 
+       some extra damage...
+- add: osp_realisticRespawnInt default:8 seconds
+       since waiting in realistic mode happens alot more...       
+- add: new toggleable command +stats (like +scores for scores) will show hit location 
+       percentiles of where you hit the most, and where you've been hit the most
+       Note: the hit location percentiles are also shown during the award ceremony       
+- add: osp_enemyKillReport <0|1> (default: enabled, always disabled in g_doWarmup 2)
+       will tell you the remaining health/armor of the player who just killed you
+       (for public servers)
+- add: bots are now enabled, you can do /addbot <botname>, I haven't touched the bot code
+       at all so they're a little dumb in complex team gametypes, but they're ok in 
+       deathmatch
+       Note: You need to get botfiles, since I don't have any and I don't want to step
+       on anyone's toes, I recommend getting the ones from the Mandown mod, you'll get two 
+       directories named botfiles and botroutes, you need to put them under the osp
+       directory for bots to work
+- add: balanceteams command/vote added, can be called from rcon or by a regular vote
+       will balance teams by using players' kill/death ratio as the sorting value
+
+- chg: removed default filter behavior on target_speakers that was removing all 
+       target_speakers when using altmaps that replace sounds
+- chg: moved most of the weapons data for sof2++ in the data/sof2++.wpn file so it can
+       be modified
+- chg: increased reach multiplier from 1.25 to 1.35 so melee hits are easier to do for
+       osp_modversion 1 and 2
+- chg: replaced most sprees award with best score   
+- chg: callvote weapononly <weapon_num> (introduced in 1.0e, forgot to mention it!)
+       play a round with only the selected weapon, type callvote weapononly ? to see what
+       the weapon numbers are
+- chg: updated docs about match_fastrestart cvar
+- chg: sof2++ bumped up oicw damage from 35 to 40
+- chg: bumped up silenced socom's innacuracy
+- chg: sof2++ now gives 3 flashes
+- chg: sof2++ anm14 lasts 45 seconds instead of 8
+- chg: sof2++ lowered see-through distance with IR goggles
+- chg: sof2++ lowered viewable distance with NV goggles
+
+- fix: awards not always showing a winner even tho a winner there was
+- fix: newbie award was including people who hadn't played enough
+- fix: crosseyed award was including people who hadn't fired enough shots
+- fix: backpack picked up when not needing it
+- fix: additionnal security to make OSP ui panel behave correctly
+- fix: sof2++ additionnal weapons hurting players in invulnerability time
+- fix: adm callvote executing the previous passed vote when it passes
+- fix: unsupported items in vanilla (i.e.: m67 grenade on mp_shop) from breaking
+       the default sof2 client from loading
+- fix: sprees not resetting when doing a team kill, and spree displaying in obituary when 
+       at 0 and team killing       
+      
+
+v1.0e
+===================================================================================
+- add: new individual scoring points in gametype vip
+       killing someone who's hurt your vip in the last 5 seconds gives 3 points
+       killing the vip gives 5 points
+       vip killing enemy players gets 3 points
+- chg: removed broken RD filters in the ingame browser, i recommend using All Seeing Eye!
+- chg: sof2++ reduced see-through walls distance of thermals by 33% (from 600 to 400)
+- fix: backpacks giving flash/fire/smoke nades in vanilla and osp++
+- fix: fixed possible client exploit with goggles
+- note: disabling weapons in sof2++ requires setting cvars that have sof2pp between disable
+       and pickup, like so disable_sof2pp_pickup_weapon_***
+
+
+v1.0d
+===================================================================================
+
+- add: consolidated osp/osp++/sof2++ versions, they can be switched to with osp_modversion CVAR
+       osp_modversion 0 -> vanilla sof2
+       osp_modversion 1 -> osp++
+       osp_modversion 2 -> sof2++
+- add: osp_weaponsFile cvar which specifies the weapons file parsed, this will allow
+       server admins that run weapons modification to quickly switch between files with
+       just a quick map_restart
+       i.e.: set osp_weaponsFile "ext_data/my_L33T_RealDamage_file.wpn" and then switch
+       to regular damage mode by just typing /reset osp_weaponsFile
+       Note: this will only work in regular OSP and OSP++ (not sof2++)
+- add: killing spree system ... :D (a killing spree is 5 consecutive kills without dying)
+- add: admin jail command (adm jail <id> <time>) where you can put someone in "jail" for a 
+       determined amount of time or the default time (osp_defaultJailTime)
+- add: vip gametype where each team respawns like in CTF and where the objective is to kill the
+       other team's VIP, optionnaly VIPs can be female models (osp_femaleVIP)
+- add: bad awards system (can be disabled by setting g_awards 2)
+       Quitter award - most suicides
+       Lemon award - most teamkills
+       Newbie award - worst ratio
+       Easy Target award - most deaths
+       Crosseyed award - worst accuracy
+       Spammer award - most shots fired
+       Chatty b*tch - most chat messages
+- add: new cvar osp_friendlyFireMultiplier, so you can reduce friendly fire 
+       without removing it completely.
+- add: new referee command cointoss throws a coin and tells result to everyone (to determine who
+       starts first in matches for example)
+- add: you can now load comp and pub configs through rcon (rcon comp & rcon pub)
+- add: vip comp and pub configs
+- add: new weaptoggle accessory for selecting 
+
+- chg: new named configs usage /callvote comp CAL while playing CTF would try to load
+       the file osp_ctf_comp.CAL.cfg, old style default configs still work when no name
+       is specified
+- chg: skill removed from awards, replaced with number of killing sprees
+- chg: cheat protected pmove_fixed and pmove_msec       
+- chg: added sound entity (target_speaker) to the altmap system, so you can now add sounds to
+       your customized alt maps       
+- chg: osp++ shotgun recovery time lowered to 500 from 800
+- chg: osp++ shotgun inaccuracy lowered from 0.025 to 0.001
+- chg: osp++ shotguns MUCHO better
+- chg: osp++ usas inaccuracy lowered from 0.025 to 0.005
+- chg: sof2++ slowed down the acceleration of the RPG
+- chg: sof2++ oicw now has 4 explosive bullets that do 85 dmg on a 135 radius
+- chg: sof2++ walking m60 inaccuracy upped to 0.5
+- chg: sof2++ m60 running/leaning/jumping inaccuracy upped to 0.65
+- chg: sof2++ mm1 now viable in MP, shoots bouncy timed grenades, clip size 3 with 1 extra clips
+- chg: sof2++ rpg now viable in MP, shoots accelerating rocket, clip size 1 with no extra clips 
+	(cannot fire while moving or leaning)
+- chg: sof2++ new disable_sof2pp_* cvars for disabling weapons in sof2++
+- chg: sof2++ changed IR and NV goggles to make them more useful
+       - IR now sees further through walls, but is darker and sees less the environment
+       - NV now highlights players like IR and at a greater distance
+       
+- fix: gametype voting bug 
+- fix: smoke nade hurting players in osp++
+- fix: friend token with client 0 printing "none" instead of client 0's name
+- fix: enhanced award system font/text to be easier to look at
+- fix: sof2++ changed weapon values on client so new weapons predict correctly
+- fix: admin panel disabled when following someone not admin, same with ref and team
+- fix: updated docs
+

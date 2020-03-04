@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.orangesmoothie.org/html-news.shtml -->
+<HTML>
+  <HEAD>
+    <TITLE>html-top</TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <META content="MSHTML 6.00.2800.1106" name="GENERATOR">
+    <STYLE type="text/css">BODY { SCROLLBAR-FACE-COLOR: #e76b00; SCROLLBAR-HIGHLIGHT-COLOR: #000000; SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ec840b; SCROLLBAR-BASE-COLOR: #e76b00; scrollbar-3d-light-color: #000000; scrollbar-dark-shadow-color: #000000 }
+	</STYLE>
+  </HEAD>
+  <BODY text="#000000" vLink="#ffcc2e" aLink="#ffcc2e" link="#ffcc2e" bgColor="#ec840b" background="images/bg-news.jpg">
+    <CENTER><IMG height="350" src="images/blender.jpg" width="290" align="right"><IMG src="images/osp_small.gif" border="0">
+    </CENTER>
+    <HR width="100%" color="#000000" noShade SIZE="1">
+    <FONT face="Arial,Helvetica" size="2">
+      <H3>
+        OSP for Soldier of Fortune 2 : Double Helix
+        <BR>
+        <a href="root.htm">Official documentation</a>
+      </H3>
+      <OL>
+        <h4>Refereeing an OSP server</h4>
+        <table width="500">
+          <tr>
+            <td>
+              <h5><a name="a">What is a referee</a></h5>
+              <font size="2">Referees are your standart match admin/player, they can control 
+                most of the team commands for each team in order to quickly set up players for 
+                a match. The referee's role is basically to help a match go from start to 
+                finish without a hitch. Usually you'll want the referee to be the player with 
+                the best knowledge of OSP and its settings. A referee can also quickly change 
+                any callvoteable settings if that setting is voteable, if it is disabled for 
+                voting the referee will not be able to change it. Admins that suspend their 
+                status become referees, admins are more powerful than referees because they can 
+                change any setting, voteable or not. Referees have no "powers" and can be 
+                kicked from the server like everyone else. </font>
+              <br>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="a">How to become a referee</a></h5>
+              <font size="2">In order to become a referee, you can either know the 
+                sv_refereePassword and <b>/ref [password]</b> or you can get voted as a 
+                referee, if it is allowed on the server, you can call a referee vote unto 
+                yourself, <b>/callvote referee [your_id#]</b>. Once your referee status, it 
+                will stick until you disconnect from the server.<br>
+                <br>
+                Note: you can get demoted back to regular user if people are discontent with 
+                your refereeing, users unhappy with a referee can <b>/callvote unreferee [id#]</b>.
+              </font>
+              <br>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5><a name="b">Referee commands</a></h5>
+              <font size="2">Referees have a toolset of commands taylored to help them quickly 
+                setup servers for matches. Referees can also change any callvoteable setting on 
+                the server by either typing doing the vote using the user interface, or doing <b>/ref 
+                  [callvote_option]</b>.
+                <br>
+                <br>
+                <b>Note : all referee commands must be preceded by "/ref "</b></font><br>
+              <br>
+              <table cellPadding="2" width="720" border="2" bgcolor="#e36600" style="BORDER-COLLAPSE: collapse" cellspacing="0" bordercolor="#000000" bordercolorlight="#000000" bordercolordark="#000000">
+                <tr bgcolor="#000000">
+                  <td width="20%"><font size="2" color="#ffffff"><b>Command</b></font></td>
+                  <td width="25%"><font size="2" color="#ffffff"><b>Arguments</b></font></td>
+                  <td><font size="2" color="#ffffff"><b>Effect</b></font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">?</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Prints the list of referee commands to the console 
+                      in an easy to read format.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2"><i>password</i></font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Become a referee using the password.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">talk</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>message</i></font></td>
+                  <td valign="top"><font size="2">Send a message to all players on the server.</font></td>
+                </tr>
+                <!-- separator -->
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">chat</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>message</I></FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Send a message to all referees on the server.</FONT></TD>
+                </TR>
+                <tr>
+                  <td width="20%" valign="top"><font size="2">ready</font></td>
+                  <td width="25%" valign="top"><font size="2"></font></td>
+                  <td valign="top"><font size="2">Force the start of the match in ready-up mode, by 
+                      readying up everyone.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">reset</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>red|blue|none</i></font></td>
+                  <td valign="top"><font size="2">Reset the specified team's settings, or both if no 
+                      argument is given.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">name</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>[red|blue] [name]</i></font></td>
+                  <td valign="top"><font size="2">Rename the specified team to [name].</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">lock<br>
+                      unlock</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>red|blue|none</i></font></td>
+                  <td valign="top"><font size="2">Lock or unlock the specified team, or both if no 
+                      argument is given.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">speclock<br>
+                      specunlock</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>red|blue|none</i></font></td>
+                  <td valign="top"><font size="2">Lock or unlock from spectator the specified team, 
+                      or both if no argument is given.</font></td>
+                </tr>
+                <!-- separator -->
+                <tr>
+                  <td width="20%" valign="top"><font size="2">specinvite<br>
+                      specuninvite</font></td>
+                  <td width="25%" valign="top"><font size="2"><i>[red|blue] [#id]</i></font></td>
+                  <td valign="top"><font size="2">Invite or uninvite player with #id to spectate the 
+                      specified team.</font></td>
+                </tr>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">delegate</FONT></TD>
+                  <TD vAlign="top" width="25%"><FONT size="2"><I>[red|blue] [#id]</I></FONT></TD>
+                  <TD vAlign="top"><FONT size="2">Make someone the captain of a team.</FONT></TD>
+                </TR>
+                <TR>
+                  <TD vAlign="top" width="20%"><FONT size="2">cointoss</FONT></TD>
+                  <TD vAlign="top" width="25%"></TD>
+                  <TD vAlign="top"><FONT size="2">Throw a coin to get a random result. Useful during 
+                      match setups.</FONT></TD>
+                </TR>
+              </table>
+              <br>
+              <br>
+            </td>
+          </tr>
+        </table>
+    </FONT>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr SIZE="1" NOSHADE WIDTH="100%" COLOR="#000000">
+    </OL>
+  </BODY>
+</HTML>
